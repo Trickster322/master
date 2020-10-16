@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}План работы{% endblock %}
+
+{% block content %}
+
+	<div> {{plan_detail.description}} </div>
+	<div> {{plan_detail.version}} </div>
+	<div> {{plan_detail.name}} </div>
+	<div>
+		{{plan_detail.user}}
+	</div>
+	<div>
+		<a href="{{plan_detail.plan_obj.url}}" title="">Скачать</a>
+	</div>
+
+{% endblock %}
+

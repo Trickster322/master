@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Тексты работы{% endblock %}
+
+{% block content %}
+
+	{% if texts_list %}
+
+		{% for a in texts_list %}
+			<div>
+				<a href="{{a.text_obj.url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="{{ a.get_absolute_url }}" title="">Подробнее</a>
+				<div>
+					{{a.user}}
+				</div>
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+		Нет публицаций
+	{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Plan работы{% endblock %}
+
+
+{% block content %}
+    <h1>New post</h1>
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+		     
+		      <div>
+		      	remark
+		      	{{form.as_p}}
+		      </div>  
+		       
+
+      <input type="submit" value="Save" />
+    </form>
+{% endblock content %}

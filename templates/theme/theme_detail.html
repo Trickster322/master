@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Тема{% endblock %}
+
+{% block content %}
+
+	<div>Профессор: {{theme_detail.professor}} </div>
+	<div>Тема: {{theme_detail.theme}} </div>
+	<div>Магистр: {{theme_detail.master}} </div>
+	<div>История изменения: {{theme_detail.history.all}}</div>
+
+
+{% endblock %}

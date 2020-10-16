@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}Профиль пользователя {{user.first_name}} {{user.last_name}} {% endblock %}</title>
+	{% block css %}
+	<link href="{% static '/css/main.css' %}" rel="stylesheet" type="text/css" media="all">
+	{% endblock css %}
+</head>
+<body>
+	{% block content %}
+	{% if user.is_authenticated %}
+    <img src="{{ user.userprofile.avatar.url }}">
+    <div>{{user.username}}</div>
+    <div>{{user.first_name}}</div>
+    <div>{{user.last_name}}</div>
+    <div>{{user.email}}</div>
+    <div>{{user.userprofile.skype}}</div>
+    <div>{{user.userprofile.zoom}}</div>
+    <div>{{user.userprofile.telegram}}</div>
+    <div>{{user.userprofile.group}}</div>
+    <div>{{user.userprofile.specialty}}</div>
+	{% else %}
+    <img src="{% static 'img/default_avatar.png' %}">
+	{% endif %}
+	
+	{% endblock %}
+</body>
+</html>

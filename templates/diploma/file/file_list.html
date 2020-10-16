@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Программный продукт работы{% endblock %}
+
+{% block content %}
+
+	{% if file_list %}
+
+		{% for a in file_list %}
+			<div>
+				<a href="{{a.file_obj.url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="{{ a.get_absolute_url }}" title="">Подробнее</a>
+			</div>
+		{% endfor %}
+
+	{% else %}
+		Нет публицаций
+	{% endif %}
+
+
+
+{% endblock %}

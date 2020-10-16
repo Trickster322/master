@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Файл работы{% endblock %}
+
+{% block content %}
+
+	<div> {{file_detail.description}} </div>
+	<div> {{file_detail.version}} </div>
+	<div> {{file_detail.name}} </div>
+	<div>
+		<a href="{{file_detail.file_obj.url}}" title="">Скачать</a>
+	</div>
+{% endblock %}

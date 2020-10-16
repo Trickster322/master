@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Темы магистрских{% endblock %}
+
+{% block content %}
+
+	{% if theme_list %}
+
+		{% for a in theme_list %}
+			<div>
+				{{a.professor}}
+				{{a.theme}}
+				{{a.master}}
+				<a href="{{ a.get_absolute_url }}" title="">Подробнее</a>
+				
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+		Нет публицаций
+	{% endif %}
+
+
+{% endblock %}

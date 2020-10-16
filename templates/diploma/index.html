@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Тексты работы{% endblock %}
+
+{% block content %}
+
+	{% if last_text %}
+
+		{% for a in last_text %}
+			<div>
+				<a href="{{a.get_absolute_url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="/masterfiles/text" title="">Все версии</a>
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+	<div>	
+		Текст работы не добавлен
+	</div>
+	{% endif %}
+
+
+	{% if last_pres %}
+
+		{% for a in last_pres %}
+			<div>
+				<a href="{{a.get_absolute_url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="/masterfiles/presentation" title="">Все версии</a>
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+	<div>
+		Презентация не добавлена
+	</div>
+	{% endif %}
+
+
+	{% if last_file %}
+
+		{% for a in last_file %}
+			<div>
+				<a href="{{a.get_absolute_url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="/masterfiles/file" title="">Все версии</a>
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+	<div>
+		Программный продукт не добавлен
+	</div>
+	{% endif %}
+
+
+	{% if last_plan %}
+
+		{% for a in last_plan %}
+			<div>
+				<a href="{{a.get_absolute_url}}" title="">{{a.name}}</a>
+				{{a.description}}
+				{{a.version}}
+				<a href="/masterfiles/plan" title="">Все версии</a>
+			</div>
+		{% endfor %}
+
+
+	{% else %}
+	<div>
+		Индивидуальный план не добавлен
+	</div>
+	{% endif %}
+
+{% endblock %}

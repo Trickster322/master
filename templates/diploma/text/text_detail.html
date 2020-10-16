@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Тексты работы{% endblock %}
+
+{% block content %}
+
+	<div>Описание: {{text_detail.description}} </div>
+	<div>Версия: {{text_detail.version}} </div>
+	<div>Название: {{text_detail.name}} </div>
+	<div>Добавил: {{text_detail.user}} </div>
+	<div>
+		<a href="{{text_detail.text_obj.url}}" title="">Скачать текст</a>
+	</div>
+
+{% endblock %}

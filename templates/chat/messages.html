@@ -1,0 +1,22 @@
+{% if not chat %}
+    <div>
+        Невозможно начать беседу. Не найден пользователь или вы не имеете доступа к данной беседе."
+    </div>
+{% else %}
+    {% load tz %}
+    {% if chat %}
+        <div>
+            <div>
+                {% for message in chat.message_set.all %}
+                        {% include 'chat/message.html' with message_item=message %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    <div>
+        <form>
+            {% csrf_token %}
+            <button type="submit" class="btn btn-default btn-sm" onclick="return ETextEditor.validateForm('message-form')"><span class="ico ico-comment"></span>Отправить</button>
+        </form>
+    </div>
+{% endif %}

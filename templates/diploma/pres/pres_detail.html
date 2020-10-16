@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Презентация работы{% endblock %}
+
+{% block content %}
+
+	<div> {{pres_detail.description}} </div>
+	<div> {{pres_detail.version}} </div>
+	<div> {{pres_detail.name}} </div>
+	<div>
+		<a href="{{pres_detail.pres_obj.url}}" title="">Скачать</a>
+	</div>
+{% endblock %}
